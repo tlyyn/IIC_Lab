@@ -1,17 +1,17 @@
-name: My GitHub Actions Pipeline
+name: Test GitHub Action
 
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
   pull_request:
-    branches: [ main ]
+    branches: [ master ]
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+      - name: Checkout repo
+        uses: actions/checkout@v2
 
-    - name: Build code
-      run: echo "Building the project..."
+      - name: Echo text
+        run: echo "GitHub Action triggered!"
